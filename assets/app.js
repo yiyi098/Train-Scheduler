@@ -48,8 +48,8 @@ dataRef.ref().on("child_added", function(childSnapshot) {
 
   var startTimeConverted = moment(time, "hh:mm").subtract(1, "years");
   var timeDiff = moment().diff(moment(startTimeConverted), "minutes");
-  var timeRemain = timeDiff % childSnapshot.val().frequency;
-  var minutesAway = childSnapshot.val().frequency - timeRemain;
+  var timeRemain = timeDiff % frequency;
+  var minutesAway = frequency - timeRemain;
   var nextArrival = moment().add(minutesAway, "minutes");
   var formattedNextArrival = moment(nextArrival).format("LT");
 
